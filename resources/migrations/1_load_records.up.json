@@ -1,0 +1,127 @@
+[
+  {
+    "create": "KzStats",
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "properties": {
+          "steam_id": {
+            "bsonType": "string"
+          },
+          "map_name": {
+            "bsonType": "string"
+          },
+          "parent_history_id": {
+            "bsonType": "string"
+          },
+          "tp": {
+            "bsonType": "object",
+            "properties": {
+              "id": {
+                "bsonType": "int"
+              },
+              "player_name": {
+                "bsonType": "string"
+              },
+              "server_id": {
+                "bsonType": "int"
+              },
+              "map_id": {
+                "bsonType": "int"
+              },
+              "mode": {
+                "bsonType": "string"
+              },
+              "tickrate": {
+                "bsonType": "int"
+              },
+              "time": {
+                "bsonType": "double"
+              },
+              "string_time": {
+                "bsonType": "string"
+              },
+              "teleports": {
+                "bsonType": "int"
+              },
+              "created_on": {
+                "bsonType": "string"
+              },
+              "updated_on": {
+                "bsonType": "string"
+              },
+              "updated_by": {
+                "bsonType": "int"
+              },
+              "record_filter_id": {
+                "bsonType": "int"
+              },
+              "server_name": {
+                "bsonType": "string"
+              },
+              "points": {
+                "bsonType": "int"
+              },
+              "replay_id": {
+                "bsonType": "int"
+              }
+            }
+          },
+          "pro": {
+            "bsonType": "object",
+            "properties": {
+              "id": {
+                "bsonType": "int"
+              },
+              "player_name": {
+                "bsonType": "string"
+              },
+              "server_id": {
+                "bsonType": "int"
+              },
+              "map_id": {
+                "bsonType": "int"
+              },
+              "mode": {
+                "bsonType": "string"
+              },
+              "tickrate": {
+                "bsonType": "int"
+              },
+              "time": {
+                "bsonType": "double"
+              },
+              "string_time": {
+                "bsonType": "string"
+              },
+              "teleports": {
+                "bsonType": "int"
+              },
+              "created_on": {
+                "bsonType": "string"
+              },
+              "updated_on": {
+                "bsonType": "string"
+              },
+              "updated_by": {
+                "bsonType": "int"
+              },
+              "record_filter_id": {
+                "bsonType": "int"
+              },
+              "server_name": {
+                "bsonType": "string"
+              },
+              "points": {
+                "bsonType": "int"
+              },
+              "replay_id": {
+                "bsonType": "int"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]

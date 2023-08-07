@@ -1,0 +1,15 @@
+Create Mongo Collection
+    - Map Records
+    - Jump Stats
+    - Overall Stats
+    - Map Stats
+
+Add Filter to requests
+    - Libraries
+    - Implement logic so steamId can be passed to search by player instead of just me
+        - Is there an API I can hit to get the steamId by the players name?
+
+Add sort to requests
+
+Implement log library
+Implement core library
