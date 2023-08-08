@@ -3,13 +3,14 @@ module github.com/NickLovera/KzStats
 go 1.18
 
 require (
-	github.com/NickLovera/mongo-utils v0.0.0-20211107024310-e05115d53058
-	github.com/NickLovera/rest-utils-go v1.0.0
+	github.com/NickLovera/mongo-utils v0.3.0
+	github.com/NickLovera/rest-utils-go v0.1.1
 	github.com/gobuffalo/packr/v2 v2.2.0
-	github.com/gocarina/gocsv v0.0.0-20230616125104-99d496ca653d
 	github.com/gorilla/mux v1.8.0
 	github.com/spf13/cobra v1.6.1
+	github.com/spf13/pflag v1.0.5
 	github.com/spf13/viper v1.15.0
+	go.mongodb.org/mongo-driver v1.3.3
 )
 
 require (
@@ -51,12 +52,10 @@ require (
 	github.com/spf13/afero v1.9.3 // indirect
 	github.com/spf13/cast v1.5.0 // indirect
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
-	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/subosito/gotenv v1.4.2 // indirect
 	github.com/urfave/negroni v1.0.0 // indirect
 	github.com/xdg/scram v0.0.0-20180814205039-7eeb5667e42c // indirect
 	github.com/xdg/stringprep v1.0.0 // indirect
-	go.mongodb.org/mongo-driver v1.3.3 // indirect
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e // indirect
 	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
 	golang.org/x/sync v0.1.0 // indirect
@@ -69,6 +68,6 @@ require (
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
 
-replace github.com/NickLovera/rest-utils-go => C:\Users\nickl\Documents\GitHub\rest-utils-go
+//replace github.com/NickLovera/rest-utils-go => C:\Users\nickl\Documents\GitHub\rest-utils-go
 
-replace github.com/NickLovera/mongo-utils => C:\Users\nickl\Documents\GitHub\mongo-utils
+//replace github.com/NickLovera/mongo-utils => C:\Users\nickl\Documents\GitHub\mongo-utils
