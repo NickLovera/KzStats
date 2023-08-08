@@ -1,0 +1,246 @@
+openapi: 3.0.1
+info:
+  title: Kz Scraper Service
+  description: API's to save and manipulate kz stats
+  version: 1.0.0
+servers:
+  - url: /KzStats/v1
+
+tags:
+  - name: MapStats
+    description: API's to manage map stats
+paths:
+  /kzstats/recordsbyplayer/{playername}:
+    get:
+      tags:
+        - MapStats
+      summary: Get and save latest stats
+      operationId: getRecordsByPlayer
+      parameters:
+        - name: playername
+          in: path
+          description: Determines what players stats to return
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStatResponseObj'
+        500:
+          description: Server error
+          content: {}
+        400:
+          description: Server error
+          content: { }
+        401:
+          description: Server error
+          content: { }
+        403:
+          description: Server error
+          content: { }
+        503:
+          description: Server error
+          content: { }
+  /kzstats/updatedrecordsbyplayer/{playername}:
+    get:
+      tags:
+        - MapStats
+      summary: Get and update/save latest stats
+      operationId: updatedRecordsByPlayer
+      parameters:
+        - name: playername
+          in: path
+          description: Determines what players stats are pulled for
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStatResponseObj'
+        500:
+          description: Server error
+          content: { }
+        400:
+          description: Server error
+          content: { }
+        401:
+          description: Server error
+          content: { }
+        403:
+          description: Server error
+          content: { }
+        503:
+          description: Server error
+          content: { }
+  /kzstats/maphistorybyplayer/{playername}/{mapname}:
+    get:
+      tags:
+        - MapStats
+      summary: Gets a players record history for a map
+      operationId: mapHistoryByPlayer
+      parameters:
+        - name: playername
+          in: path
+          description: Determines what players stats are pulled for
+          required: true
+          schema:
+            type: string
+        - name: mapname
+          in: path
+          description: Determines what map stats are pulled for
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MapStatHistoryResponseObj'
+        500:
+          description: Server error
+          content: { }
+        400:
+          description: Server error
+          content: { }
+        401:
+          description: Server error
+          content: { }
+        403:
+          description: Server error
+          content: { }
+        503:
+          description: Server error
+          content: { }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Record:
+      type: object
+      properties:
+        id:
+          type: string
+        player_name:
+          type: string
+        server_id:
+          type: integer
+        map_id:
+          type: integer
+        mode:
+          type: string
+        tickrate:
+          type: integer
+        time:
+          type: string
+        string_time:
+          type: string
+        teleports:
+          type: integer
+        created_on:
+          type: string
+        updated_on:
+          type: string
+        updated_by:
+          type: integer
+        record_filter_id:
+          type: integer
+        server_name:
+          type: string
+        points:
+          type: integer
+        replay_id:
+          type: integer
+    MapRecords:
+      type: object
+      properties:
+        SteamId:
+          type: string
+        MapName:
+          type: string
+        Tp:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
+        Pro:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
+    MapRecordsHistory:
+      type: object
+      properties:
+        SteamId:
+          type: string
+        MapName:
+          type: string
+        Tp:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
+        Pro:
+          type: array
+          items:
+            $ref: '#/components/schemas/Record'
+        History:
+          type: array
+          items:
+            $ref: '#/components/schemas/MapRecords'
+    MapStatResponseObj:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MapRecords'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/messages'
+    MapStatHistoryResponseObj:
+      type: object
+      properties:
+        success:
+          type: boolean
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/MapRecordsHistory'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        messages:
+          type: array
+          items:
+            $ref: '#/components/schemas/messages'
+    messages:
+      type: object
+      properties:
+        code:
+          type: string
+        type:
+          type: string
+        messages:
+          type: string
+        dataIndex:
+          type: string
+
+
