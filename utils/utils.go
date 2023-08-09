@@ -26,9 +26,7 @@ func (r *Utils) CombineRecords(c context.Context, pro, tp []*db.Record) map[stri
 			Pro:     stat,
 			Tp:      &db.Record{},
 		}
-		record.Pro.StringTime = time.Duration(0.1 * float64(time.Second)).String()
-		record.Pro.Time = 0.2
-
+		record.Pro.StringTime = time.Duration(stat.Time * float64(time.Second)).String()
 		recordsMap[stat.MapName] = record
 	}
 
@@ -36,7 +34,7 @@ func (r *Utils) CombineRecords(c context.Context, pro, tp []*db.Record) map[stri
 		recordWithPro, ok := recordsMap[stat.MapName]
 		if ok {
 			recordWithPro.Tp = stat
-			recordWithPro.Tp.StringTime = time.Duration(0.1 * float64(time.Second)).String()
+			recordWithPro.Tp.StringTime = time.Duration(stat.Time * float64(time.Second)).String()
 
 			recordsMap[stat.MapName] = recordWithPro
 		} else {
@@ -46,8 +44,7 @@ func (r *Utils) CombineRecords(c context.Context, pro, tp []*db.Record) map[stri
 				Tp:      stat,
 				Pro:     &db.Record{},
 			}
-			newRecord.Tp.StringTime = time.Duration(0.1 * float64(time.Second)).String()
-			newRecord.Tp.Time = 0.2
+			newRecord.Tp.StringTime = time.Duration(stat.Time * float64(time.Second)).String()
 
 			recordsMap[stat.MapName] = newRecord
 		}
