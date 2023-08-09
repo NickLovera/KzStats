@@ -101,7 +101,6 @@ func (reqService *KzService) UpdatedRecordsByPlayer(c context.Context, playerNam
 
 	var response []*db.MapRecords
 	for _, record := range combinedRecords {
-		log.Println(record)
 		currRecord, isPb, isNew, pbErr := reqService.KzRepo.IsPbOrNew(c, record)
 		if pbErr != nil {
 			return nil, pbErr
@@ -127,7 +126,7 @@ func (reqService *KzService) UpdatedRecordsByPlayer(c context.Context, playerNam
 				return nil, crteErr
 			}
 		} else {
-			log.Printf("Did not beat previous pb. MapName: %s. PlayerName: %s.\n", record.MapName, playerName)
+			//log.Printf("Did not beat previous pb. MapName: %s. PlayerName: %s.\n", record.MapName, playerName)
 			continue
 		}
 		response = append(response, record)
