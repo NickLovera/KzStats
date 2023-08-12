@@ -4,7 +4,7 @@ go 1.18
 
 require (
 	github.com/NickLovera/mongo-utils v0.3.0
-	github.com/NickLovera/rest-utils-go v0.1.1
+	github.com/NickLovera/rest-utils-go v1.0.0
 	github.com/gobuffalo/packr/v2 v2.2.0
 	github.com/gorilla/mux v1.8.0
 	github.com/spf13/cobra v1.6.1

@@ -46,6 +46,8 @@ github.com/NickLovera/mongo-utils v0.3.0 h1:7ZLDipQZep/3IwoPLOlPzsC6/xRDFGjV54Vr
 github.com/NickLovera/mongo-utils v0.3.0/go.mod h1:EhyZyA3qNvM7oxri3wdcPGd+B4ERUoEI/xhtZjfozsg=
 github.com/NickLovera/rest-utils-go v0.1.1 h1:gXioRoM69Jve7LcBpG/zRcZ2yrWQYFND1avmDBuYM0A=
 github.com/NickLovera/rest-utils-go v0.1.1/go.mod h1:yqsm83otsOHAJtQn+aqN6Ll6GTVLOLddot8yNjliX30=
+github.com/NickLovera/rest-utils-go v1.0.0 h1:8TpWSZHYBNvdhJ6SDisaWlvYgG616c5xGkoUfncgWZc=
+github.com/NickLovera/rest-utils-go v1.0.0/go.mod h1:HCVdkxfc197uWUOmEIEzOn9L7CJxEoHSykdnXcl7bqo=
 github.com/Nvveen/Gotty v0.0.0-20120604004816-cd527374f1e5/go.mod h1:lmUJ/7eu/Q8D7ML55dXQrVaamCz2vxCfdQBasLZfHKk=
 github.com/OneOfOne/xxhash v1.2.2/go.mod h1:HSdplMjZKSmBqAxg5vPj2TmRDmfkzw+cTzAElWljhcU=
 github.com/Shopify/sarama v1.19.0/go.mod h1:FVkBWblsNy7DGZRfXLU0O9RCGt5g3g3yEuWXgklEdEo=
