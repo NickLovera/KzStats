@@ -71,3 +71,24 @@ func (s *Record) PrettyPrint() string {
 		s.TickRate, s.Time, s.Teleports, s.CreatedOn, s.UpdatedOn, s.UpdatedBy,
 		s.RecordFilterId, s.ServerName, s.MapName, s.Points, s.ReplayId)
 }
+
+type JumpRecord struct {
+	ID              primitive.ObjectID `json:"-" bson:"_id"`
+	Id              int                `json:"id" bson:"id"`
+	ServerId        int                `json:"server_id" bson:"serverId"`
+	PlayerName      string             `json:"player_name" bson:"playerName"`
+	SteamId         string             `json:"steam_id" bson:"steamId"`
+	JumpType        int                `json:"jump_type" bson:"jumpType"`
+	Distance        float64            `json:"distance" bson:"distance"`
+	Tickrate        int                `json:"tickrate" bson:"tickrate"`
+	MslCount        int                `json:"msl_count" bson:"mslCount"`
+	StrafeCount     int                `json:"strafe_count"  bson:"strafeCount"`
+	IsCrouchBind    int                `json:"is_crouch_bind" bson:"isCrouchBind"`
+	IsForwardBind   int                `json:"is_forward_bind" bson:"isForwardBind"`
+	IsCrouchBoost   int                `json:"is_crouch_boost" bson:"isCrouchBoost"`
+	UpdatedById     int                `json:"updated_by_id" bson:"updatedById"`
+	CreatedOn       string             `json:"created_on" bson:"createdOn"`
+	UpdatedOn       string             `json:"updated_on" bson:"updatedOn"`
+	ParentHistoryId string             `json:"parent_history_id,omitempty" bson:"parent_history_id"`
+	History         []*JumpRecord      `json:"history,omitempty" bson:"-"`
+}

@@ -7,7 +7,6 @@ import (
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"log"
 )
 
 //Set up repo
@@ -104,7 +103,6 @@ func (repo *KzRepo) GetRecordsBySteamId(c context.Context, steamId string) ([]*M
 
 func (repo *KzRepo) GetMapHistory(c context.Context, parentId string) ([]*MapRecords, error) {
 	var records []*MapRecords
-	log.Println(parentId)
 	err := repo.MongoClient.FindMany(c, &records, repo.CollName, bson.M{
 		"parent_history_id": parentId,
 	}, options.Find().SetSort(bson.M{"_id": -1}))
